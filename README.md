@@ -124,6 +124,3 @@ Mandatory for testing purposes:
    ```
 4. Open a pull request for review.
 
----
-
-We are excited to see your contributions! Let’s bring *Diablo* to life and make it an unforgettable gaming experience. 🎮🔥
