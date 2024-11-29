@@ -63,14 +63,19 @@
     <Analyzer Include="/home/marwan/Unity/Hub/Editor/2022.3.45f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Models/Demon/Common/Scripts/CharacterVFX.cs" />
+    <Compile Include="Assets/Models/Demon/Common/Scripts/Preview/AnimationList.cs" />
+    <Compile Include="Assets/Models/Demon/Common/Scripts/Animation/AnimationStateMachine.cs" />
+    <Compile Include="Assets/Models/Demon/Common/Scripts/Preview/CharacterLoader.cs" />
+    <Compile Include="Assets/Models/Minion/Goblin_rouge/Script/Goblin_ro_ctrl.cs" />
+    <Compile Include="Assets/Models/Demon/Common/Scripts/Preview/CharacterRotator.cs" />
     <Compile Include="Assets/Polytope Studio/Lowpoly_Demos/Environment_Free/Helpers/MouseLook.cs" />
-    <Compile Include="Assets/Models/Wanderer/StarterAssets/InputSystem/StarterAssetsInputs.cs" />
     <Compile Include="Assets/Scripts/MainMenuManager.cs" />
-    <Compile Include="Assets/Models/Wanderer/StarterAssets/ThirdPersonController/Scripts/BasicRigidBodyPush.cs" />
+    <Compile Include="Assets/Models/Demon/Common/Scripts/Animation/CharacterAnimation.cs" />
     <Compile Include="Assets/Polytope Studio/Lowpoly_Demos/Environment_Free/Helpers/PlayerMovement.cs" />
     <Compile Include="Assets/Scripts/AudioManager.cs" />
-    <Compile Include="Assets/Models/Wanderer/StarterAssets/ThirdPersonController/Scripts/ThirdPersonController.cs" />
     <Compile Include="Assets/ModularFirstPersonController/FirstPersonController/FirstPersonController.cs" />
+    <Compile Include="Assets/Models/Demon/Common/Scripts/Utils/AnimationID.cs" />
     <Compile Include="Assets/Scripts/IntroManager.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -84,11 +89,11 @@
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets/Polytope Studio/Lowpoly_Environments/Sources/Shaders/PT_Vegetation_Opaque_Shader.shader" />
     <None Include="Assets/Polytope Studio/Lowpoly_Environments/Sources/Shaders/PT_Vegetation_Foliage_Shader.shader" />
+    <None Include="Assets/Models/Demon/Common/Shaders/AddSoft-Mult.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" />
     <None Include="Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF.shader" />
-    <None Include="Assets/Models/Wanderer/StarterAssets/license.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" />
@@ -99,8 +104,10 @@
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets/Polytope Studio/Lowpoly_Environments/Sources/Shaders/PT_Rock_Shader.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" />
+    <None Include="Assets/Models/Demon/Necromancers/Ghoul/ReadMe.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" />
     <None Include="Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt" />
+    <None Include="Assets/Models/Minion/Goblin_rouge/readme.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" />
   </ItemGroup>
