@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/MainScene.meta
+guid: 171d4f28121cb214380043a34183f789
+folderAsset: yes
+========
 guid: 34916e8dde8dd4761b7275e322b04091
+>>>>>>>> 183e8a13686cb6f0a5ce3a996324f8a1b40934ff:Assets/Scenes/ChooseCharacterScene.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

@@ -1,6 +1,16 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<<< HEAD:Assets/Scenes/MainScene/NavMesh-Terrain.asset.meta
+guid: 2af16e208727fd34995559cc7e68529c
+NativeFormatImporter:
+========
+guid: c0f0de7c94c346246a0913da5c924a24
+DefaultImporter:
+>>>>>>>> 183e8a13686cb6f0a5ce3a996324f8a1b40934ff:Assets/Models/RFA/Default Render/Scenes/RFA.unity.meta
+=======
 guid: d502c85c6a4dc090abc241ef1fd24e9c
 NativeFormatImporter:
+>>>>>>> 183e8a13686cb6f0a5ce3a996324f8a1b40934ff
   externalObjects: {}
   mainObjectFileID: 23800000
   userData: 
