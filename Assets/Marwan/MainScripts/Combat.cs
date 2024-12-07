@@ -97,7 +97,7 @@ private void PerformAttackHit()
     foreach (Collider enemy in hitEnemies)
     {
         // Directly check for a "TakeDamage" method on the enemy
-        var enemyStats = enemy.GetComponent<EnemyAi>();
+        var enemyStats = enemy.GetComponent<DemonAI>();
         if (enemyStats != null)
         {
             enemyStats.TakeDamage(damage);
