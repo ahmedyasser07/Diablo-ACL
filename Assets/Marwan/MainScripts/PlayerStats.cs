@@ -21,67 +21,44 @@ public class PlayerStats : MonoBehaviour
         Debug.Log("PlayerStats initialized. HP: " + CurrentHP);
     }
 
-    // public void GainXP(int amount)
-    // {
-    //     if (Level >= 4)
-    //     {
-    //         Debug.Log("Max level reached. No more XP can be gained.");
-    //         return;
-    //     }
+    public void GainXP(int amount)
+    {
+        if (Level >= 4)
+        {
+            Debug.Log("Max level reached. No more XP can be gained.");
+            return;
+        }
 
-    //     CurrentXP += amount;
-    //     Debug.Log($"Gained {amount} XP. Current XP: {CurrentXP}, XPToNextLevel: {XPToNextLevel}");
+        CurrentXP += amount;
+        Debug.Log($"Gained {amount} XP. Current XP: {CurrentXP}, XPToNextLevel: {XPToNextLevel}");
 
-    //     while (CurrentXP >= XPToNextLevel && Level < 4)
-    //     {
-    //         int overflowXP = CurrentXP - XPToNextLevel;
-    //         LevelUp();
-    //         CurrentXP = overflowXP;
-    //     }
-    // }
+        while (CurrentXP >= XPToNextLevel && Level < 4)
+        {
+            int overflowXP = CurrentXP - XPToNextLevel;
+            LevelUp();
+            CurrentXP = overflowXP;
+        }
+    }
 
-    // private void LevelUp()
-    // {
-    //     Level++;
-    //     AbilityPoints++;
+    private void LevelUp()
+    {
+        Level++;
+        AbilityPoints++;
 
-    //     MaxHP += 100;
-    //     CurrentHP = MaxHP;
+        MaxHP += 100;
+        CurrentHP = MaxHP;
 
-    //     XPToNextLevel = 100 * Level;
-    //     Debug.Log($"Leveled up! New Level: {Level}, HP: {CurrentHP}, Next XP threshold: {XPToNextLevel}");
+        XPToNextLevel = 100 * Level;
+        Debug.Log($"Leveled up! New Level: {Level}, HP: {CurrentHP}, Next XP threshold: {XPToNextLevel}");
 
-    //     if (Level >= 4)
-    //     {
-    //         CurrentXP = 0;
-    //         Debug.Log("Reached max level (4). No further leveling possible.");
-    //     }
-    // }
+        if (Level >= 4)
+        {
+            CurrentXP = 0;
+            Debug.Log("Reached max level (4). No further leveling possible.");
+        }
+    }
 
-    // public bool UnlockAbility(string abilityName)
-    // {
-    //     if (AbilityPoints <= 0)
-    //     {
-    //         Debug.Log("Not enough Ability Points to unlock ability: " + abilityName);
-    //         return false;
-    //     }
-
-    //     if (unlockedAbilities.Contains(abilityName))
-    //     {
-    //         Debug.Log("Ability already unlocked: " + abilityName);
-    //         return false;
-    //     }
-
-    //     unlockedAbilities.Add(abilityName);
-    //     AbilityPoints--;
-    //     Debug.Log("Unlocked ability: " + abilityName);
-    //     return true;
-    // }
-
-    // public bool IsAbilityUnlocked(string abilityName)
-    // {
-    //     return unlockedAbilities.Contains(abilityName);
-    // }
+   
 
     public void TakeDamage(int amount)
     {
@@ -114,3 +91,30 @@ public class PlayerStats : MonoBehaviour
         Debug.Log("Player has died.");
     }
 }
+
+
+
+ // public bool UnlockAbility(string abilityName)
+    // {
+    //     if (AbilityPoints <= 0)
+    //     {
+    //         Debug.Log("Not enough Ability Points to unlock ability: " + abilityName);
+    //         return false;
+    //     }
+
+    //     if (unlockedAbilities.Contains(abilityName))
+    //     {
+    //         Debug.Log("Ability already unlocked: " + abilityName);
+    //         return false;
+    //     }
+
+    //     unlockedAbilities.Add(abilityName);
+    //     AbilityPoints--;
+    //     Debug.Log("Unlocked ability: " + abilityName);
+    //     return true;
+    // }
+
+    // public bool IsAbilityUnlocked(string abilityName)
+    // {
+    //     return unlockedAbilities.Contains(abilityName);
+    // }

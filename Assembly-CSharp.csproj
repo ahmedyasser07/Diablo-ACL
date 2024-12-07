@@ -78,9 +78,9 @@
     <Compile Include="Assets/Polytope Studio/Lowpoly_Demos/Environment_Free/Helpers/MouseLook.cs" />
     <Compile Include="Assets/Scripts/RotateCharacter.cs" />
     <Compile Include="Assets/Scripts/MainMenuManager.cs" />
+    <Compile Include="Assets/Marwan/Ghoul/MinionAI.cs" />
     <Compile Include="Assets/Models/RFA/Common/Plugins/NaughtyCharacter/Scripts/PlayerCamera.cs" />
     <Compile Include="Assets/Models/Demon/Common/Scripts/Animation/CharacterAnimation.cs" />
-    <Compile Include="Assets/Marwan/Ghoul/DemonAI.cs" />
     <Compile Include="Assets/Polytope Studio/Lowpoly_Demos/Environment_Free/Helpers/PlayerMovement.cs" />
     <Compile Include="Assets/Marwan/MainScripts/Combat.cs" />
     <Compile Include="Assets/Scripts/AudioManager.cs" />

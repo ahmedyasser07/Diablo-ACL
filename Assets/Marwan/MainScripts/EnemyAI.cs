@@ -111,12 +111,22 @@ public class EnemyAi : MonoBehaviour
     }
 
     private void Die()
+{
+    isDead = true;
+    agent.isStopped = true;
+    animator.Play("Death");
+
+    // Award the player XP here
+    PlayerStats playerStats = player.GetComponent<PlayerStats>();
+    if (playerStats != null)
     {
-        isDead = true;
-        agent.isStopped = true;
-        animator.Play("Death");
-        StartCoroutine(RemoveAfterAnimation());
+        playerStats.GainXP(30);
+        Debug.Log("Player gained 30 XP for killing an enemy.");
     }
+
+    StartCoroutine(RemoveAfterAnimation());
+}
+
 
     IEnumerator RemoveAfterAnimation()
     {
