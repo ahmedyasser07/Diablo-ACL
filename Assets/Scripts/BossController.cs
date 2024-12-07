@@ -12,6 +12,13 @@ public class BossController : MonoBehaviour
     public GameObject Aura;
     public Animator spikesAnimator;
     public Animator shieldAnimator;
+    public bool shield;
+    public bool aura;
+    public bool defend;
+    private int time;
+    public bool minionsDead;
+    public bool phase2;
+
     void Start()
     {
         if (demongirlAnimator == null || spikesAnimator == null || shieldAnimator == null)
@@ -19,70 +26,105 @@ public class BossController : MonoBehaviour
             Debug.LogError("Animator references are missing!");
         }
         Shield.SetActive(false);
-
-        
+        shield=false;
+        aura=false;
+        defend=false;
+        StartCoroutine(CheckPhaseEvery3Seconds());
+        time=0;
+        minionsDead=true;
+        phase2=false;
     }
 
 
-    // Update is called once per frame
     void Update()
     {
-       // SummonMinions();
-        
+        if (!phase2)
+    {
+        PutShieldUp();  // Put shield up only once when Phase2 starts
+        phase2 = true;  // Mark that Phase2 is active
+        defend=false;
+    }
     }
 
-    public void GetHitOn(){
-        demongirlAnimator.SetBool("GetHit", true);
+    IEnumerator CheckPhaseEvery3Seconds()
+    {
+        while (true) 
+        {
+            //Phase 2
+           if(phase2){
+               if((!defend)&&(time%2==1)){
+                PutAuraUp();
+               }
+               else if(((!defend)||(time%2==0))&&(!aura)){
+                Spikes();
+               }
+           }
+           
+           //Phase 1
+           else if(!phase2){
+            if((!defend)&&(time%2==1)&&(minionsDead)&&(!phase2)){
+                SummonMinions();
+               }
+               else if((time%2==0)&&(!phase2)){
+                Jump();
+               }
+           }
+            time+=3;
+            yield return new WaitForSeconds(3f);
+
+        }
     }
-    public void GetHitOff(){
-        demongirlAnimator.SetBool("GetHit", false);
+
+    public void GetHit(){
+        demongirlAnimator.Play("hit01");
     }
 
     public void DieOn(){
         demongirlAnimator.SetBool("Die", true);
     }
     public void DieOff(){
+        demongirlAnimator.SetBool("Die", false);
         bool switchLayer = true;
         demongirlAnimator.SetLayerWeight(1, switchLayer ? 1 : 0); // Layer 2 (Phase2)
         demongirlAnimator.SetLayerWeight(0, switchLayer ? 0 : 1); // Base Layer
         PutShieldUp();
-        demongirlAnimator.SetBool("Die", false);
     }
 
-    public void JumpOn(){
-        demongirlAnimator.SetBool("Jumo", true);
-    }
-    public void JumpOff(){
-        demongirlAnimator.SetBool("Jumo", false);
+    public void Jump(){
+        demongirlAnimator.Play("idlecombat00");
     }
 
-    public void SpikesOn(){
-        demongirlAnimator.SetBool("Spikes", true);
-        spikesAnimator.SetBool("upAll", true);
-    }
-    public void SpikesOff(){
-        demongirlAnimator.SetBool("Spikes", false);
-        spikesAnimator.SetBool("upAll", false);
+    public void Spikes(){
+        demongirlAnimator.Play("idlecombat00");
+        spikesAnimator.Play("upAll");
     }
 
     public void PutShieldDown(){
+        shield=false;
         shieldAnimator.SetBool("ShieldDown", true);
         Shield.SetActive(false);
     }
     public void PutShieldUp(){
-        shieldAnimator.SetBool("ShieldDown", false);
         Shield.SetActive(true);
+        shield=true;
+        shieldAnimator.SetBool("ShieldDown", false);
         shieldAnimator.SetBool("Phase2", true);
     }
 
     public void PutAuraDown(){
+        aura=false;
+        defend=false;
         Aura.SetActive(false);
     }
     public void PutAuraUp(){
+        aura=true;
+        defend=true;
         Aura.SetActive(true);
     }
     
     public void SummonMinions(){
+        minionsDead=false;
+        defend=true;
        if (Minion == null)
           {
             Debug.LogError("Minion Prefab is not assigned!");
