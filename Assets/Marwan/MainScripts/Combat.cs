@@ -102,6 +102,12 @@ private void PerformAttackHit()
         {
             enemyStats.TakeDamage(damage);
         }
+        // If not EnemyAi, try MinionAi
+        var minionStats = enemy.GetComponent<MinionAI>();
+        if (minionStats != null)
+        {
+            minionStats.TakeDamage(damage);
+        }
     }
 }
 

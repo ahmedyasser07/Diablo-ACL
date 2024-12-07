@@ -11,6 +11,7 @@ public class MinionAI : MonoBehaviour
     public float walkSpeed = 2f;
     public float runSpeed = 4f;
     public int minion_health = 40;
+    public int CurrentHP;
     private NavMeshAgent agent;
     private Animator animator;
     private bool isPlayerInRange = false;
@@ -25,7 +26,7 @@ public class MinionAI : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-
+        CurrentHP = minion_health;
         // Set the demon's walking speed
         agent.speed = walkSpeed;
     }
@@ -34,11 +35,11 @@ public class MinionAI : MonoBehaviour
     {
         if (isDead) return; // Prevent further updates if the minion is dead
 
-        if (minion_health <= 0)
-        {
-            Die();
-            return;
-        }
+        // if (CurrentHP <= 0)
+        // {
+        //     Die();
+        //     return;
+        // }
 
 
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
@@ -60,15 +61,16 @@ public class MinionAI : MonoBehaviour
     void Idle()
     {
         agent.isStopped = true;
-        animator.Play("idle_battle");
+        animator.Play("idle");
     }
 
     void ChasePlayer()
     {
         agent.isStopped = false;
+        animator.SetInteger ("moving", 2);//run
         agent.speed = runSpeed;
         agent.SetDestination(player.position);
-        animator.Play("walk");
+        animator.Play("run");
     }
 
     void AttackPlayer()
@@ -93,6 +95,7 @@ public class MinionAI : MonoBehaviour
             StartCoroutine(PerformAttackPattern());
         }
     }
+    
 
 
 
@@ -102,17 +105,26 @@ public class MinionAI : MonoBehaviour
         // Step 1: Swing the sword (first attack)
         animator.Play("attack1"); // Sword swing animation
         yield return new WaitForSeconds(attackCooldown);
-
+        ApplyDamageToPlayer(10);
         // Step 2: Swing the sword again (second attack)
         animator.Play("attack2"); // Sword swing animation
         yield return new WaitForSeconds(attackCooldown);
-
+        ApplyDamageToPlayer(10);
         // Step 3: Throw an explosive (cast spell)
         animator.Play("power_attack"); // Explosive animation
         yield return new WaitForSeconds(attackCooldown);
-
+        ApplyDamageToPlayer(10);
         // Allow attacking again
         isAttacking = false;
+    }
+
+    void ApplyDamageToPlayer(int damageAmount)
+    {
+        PlayerStats playerStats = player.GetComponent<PlayerStats>();
+        if (playerStats != null)
+        {
+            playerStats.TakeDamage(damageAmount);
+        }
     }
 
 
@@ -121,6 +133,12 @@ public class MinionAI : MonoBehaviour
         isDead = true; // Prevent further actions
         agent.isStopped = true; // Stop movement
         animator.Play("Death"); // Play the dying animation
+         PlayerStats playerStats = player.GetComponent<PlayerStats>();
+    if (playerStats != null)
+    {
+        playerStats.GainXP(10);
+        Debug.Log("Player gained 30 XP for killing an enemy.");
+    }
         StartCoroutine(RemoveAfterAnimation());
     }
 
@@ -132,6 +150,18 @@ public class MinionAI : MonoBehaviour
 
         // Destroy the demon game object
         Destroy(gameObject);
+    }
+
+     public void TakeDamage(int amount)
+    {
+        CurrentHP -= amount;
+        CurrentHP = Mathf.Clamp(CurrentHP, 0, minion_health);
+        Debug.Log($"Enemy took {amount} damage. CurrentHP: {CurrentHP}");
+
+        if (CurrentHP <= 0 && !isDead)
+        {
+            Die();
+        }
     }
 
 
