@@ -78,38 +78,40 @@ namespace Retro.ThirdPersonCharacter
              PerformAttackHit();
         }
 
-        private void SpecialAttack()
+       private void SpecialAttack()
+{
+    Debug.Log("Triggering special attack animation.");
+    _animator.SetTrigger(specialAttackTriggerName);
+
+    // Immediate damage for special attack
+    PerformAttackHit();
+}
+
+// This method should be called by an Animation Event at the moment the attack "connects".
+// Set an animation event in your attack/special attack animations to call this method.
+private void PerformAttackHit()
+{
+    Debug.Log("Animation event: Performing attack hit.");
+    Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayer);
+
+    foreach (Collider enemy in hitEnemies)
+    {
+        // Directly check for a "TakeDamage" method on the enemy
+        var enemyStats = enemy.GetComponent<EnemyAi>();
+        if (enemyStats != null)
         {
-            Debug.Log("Triggering special attack animation.");
-            _animator.SetTrigger(specialAttackTriggerName);
-
-            // If you want immediate damage for special attack:
-             PerformAttackHit();
-        }
-
-        // This method should be called by an Animation Event at the moment the attack "connects".
-        // Set an animation event in your attack/special attack animations to call this method.
-        private void PerformAttackHit()
-        {
-            Debug.Log("Animation event: Performing attack hit.");
-            Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayer);
-
-            foreach (Collider enemy in hitEnemies)
-            {
-                IDamageable damageableTarget = enemy.GetComponent<IDamageable>();
-                if (damageableTarget != null)
-                {
-                    damageableTarget.TakeDamage(damage);
-                }
-            }
-        }
-
-        // Optional: visualize the attack range in editor
-        private void OnDrawGizmosSelected()
-        {
-            if (attackPoint == null) return;
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+            enemyStats.TakeDamage(damage);
         }
     }
+}
+
+// Optional: visualize the attack range in editor
+private void OnDrawGizmosSelected()
+{
+    if (attackPoint == null) return;
+    Gizmos.color = Color.red;
+    Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+}
+
+}
 }

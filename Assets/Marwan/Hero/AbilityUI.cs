@@ -11,15 +11,15 @@ namespace Retro.ThirdPersonCharacter
 
         private string abilityName = "SpecialAbility";
 
-        private void Start()
-        {
-            abilityNameText.text = abilityName;
-            unlockAbilityButton.onClick.AddListener(UnlockAbility);
-        }
+        // private void Start()
+        // {
+        //     abilityNameText.text = abilityName;
+        //     unlockAbilityButton.onClick.AddListener(UnlockAbility);
+        // }
 
-        private void UnlockAbility()
-        {
-            abilityManager.UnlockAbility(abilityName);
-        }
+        // private void UnlockAbility()
+        // {
+        //     abilityManager.UnlockAbility(abilityName);
+        // }
     }
 }

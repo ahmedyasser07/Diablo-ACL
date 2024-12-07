@@ -65,29 +65,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/Models/Demon/Common/Scripts/CharacterVFX.cs" />
-    <Compile Include="Assets/Marwan/GlobalOOP/EnemyStats.cs" />
     <Compile Include="Assets/Models/Demon/Common/Scripts/Preview/AnimationList.cs" />
-    <Compile Include="Assets/Marwan/GlobalOOP/Children/PlayerStats.cs" />
     <Compile Include="Assets/Models/Demon/Common/Scripts/Animation/AnimationStateMachine.cs" />
     <Compile Include="Assets/Models/Demon/Common/Scripts/Preview/CharacterLoader.cs" />
     <Compile Include="Assets/Models/Minion/Goblin_rouge/Script/Goblin_ro_ctrl.cs" />
     <Compile Include="Assets/Marwan/Hero/AbilityManager.cs" />
+    <Compile Include="Assets/Marwan/MainScripts/PlayerStats.cs" />
     <Compile Include="Assets/Marwan/Hero/keypress/Jumping.cs" />
-    <Compile Include="Assets/Marwan/GlobalOOP/BaseCharacter.cs" />
     <Compile Include="Assets/Marwan/Hero/AbilityUI.cs" />
     <Compile Include="Assets/Models/Demon/Common/Scripts/Preview/CharacterRotator.cs" />
+    <Compile Include="Assets/Marwan/MainScripts/EnemyAI.cs" />
     <Compile Include="Assets/Polytope Studio/Lowpoly_Demos/Environment_Free/Helpers/MouseLook.cs" />
     <Compile Include="Assets/Scripts/RotateCharacter.cs" />
     <Compile Include="Assets/Scripts/MainMenuManager.cs" />
     <Compile Include="Assets/Models/RFA/Common/Plugins/NaughtyCharacter/Scripts/PlayerCamera.cs" />
     <Compile Include="Assets/Models/Demon/Common/Scripts/Animation/CharacterAnimation.cs" />
-    <Compile Include="Assets/Marwan/Hero/Combat.cs" />
     <Compile Include="Assets/Marwan/Ghoul/DemonAI.cs" />
     <Compile Include="Assets/Polytope Studio/Lowpoly_Demos/Environment_Free/Helpers/PlayerMovement.cs" />
+    <Compile Include="Assets/Marwan/MainScripts/Combat.cs" />
     <Compile Include="Assets/Scripts/AudioManager.cs" />
     <Compile Include="Assets/Marwan/Hero/PlayerHUD.cs" />
     <Compile Include="Assets/Marwan/Camera/CameraController.cs" />
-    <Compile Include="Assets/Marwan/GlobalOOP/EnemyAI.cs" />
     <Compile Include="Assets/Models/Demon/Common/Scripts/Utils/AnimationID.cs" />
     <Compile Include="Assets/Models/RFA/Common/Plugins/NaughtyCharacter/Scripts/SpringArm.cs" />
     <Compile Include="Assets/Scripts/IntroManager.cs" />
