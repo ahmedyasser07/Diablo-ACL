@@ -5,8 +5,11 @@ public class DemonAI : MonoBehaviour
 {
     // References
     [Header("References")]
-    public Transform player;
-    public Transform[] waypoints; // Assign 4 waypoints in the inspector
+    [Tooltip("Assign the player Transform here")]
+    public Transform player; // Assigned by CampManager
+
+    [Tooltip("Reference to the CampManager")]
+    public CampManager campManager; // Assigned by CampManager
 
     private NavMeshAgent agent;
     private Animator animator;
@@ -14,9 +17,16 @@ public class DemonAI : MonoBehaviour
     private DemonHealth health;
 
     [Header("Movement Settings")]
+    [Tooltip("Range to detect the player")]
     public float detectionRange = 10f;
+
+    [Tooltip("Range to attack the player")]
     public float attackRange = 2f;
+
+    [Tooltip("Walking speed of the Demon")]
     public float walkSpeed = 2f;
+
+    [Tooltip("Running speed of the Demon")]
     public float runSpeed = 4f;
 
     private int currentWaypointIndex = 0;
@@ -89,8 +99,8 @@ public class DemonAI : MonoBehaviour
     {
         if (!health.IsDead)
         {
-            // If no waypoints assigned, just idle
-            if (waypoints == null || waypoints.Length == 0)
+            // Ensure CampManager and waypoints are assigned
+            if (campManager == null || campManager.waypoints == null || campManager.waypoints.Length == 0)
             {
                 Idle();
                 return;
@@ -100,12 +110,12 @@ public class DemonAI : MonoBehaviour
             agent.speed = walkSpeed;
 
             // Set destination to current waypoint
-            agent.SetDestination(waypoints[currentWaypointIndex].position);
+            agent.SetDestination(campManager.waypoints[currentWaypointIndex].position);
 
-            // If close to the waypoint, move to the next
+            // If close to the waypoint, move to the next one
             if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
             {
-                currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
+                currentWaypointIndex = (currentWaypointIndex + 1) % campManager.waypoints.Length;
             }
 
             animator.Play("Walk");

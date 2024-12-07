@@ -77,6 +77,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8102969495323673366, guid: 6cf6be9db2d24c648b323fc57dd3b261, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4823149795970481844}
+    - targetCorrespondingSourceObject: {fileID: 8102969495323673366, guid: 6cf6be9db2d24c648b323fc57dd3b261, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6748347441747463656}
+    - targetCorrespondingSourceObject: {fileID: 8102969495323673366, guid: 6cf6be9db2d24c648b323fc57dd3b261, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4415450321132694259}
   m_SourcePrefab: {fileID: 100100000, guid: 6cf6be9db2d24c648b323fc57dd3b261, type: 3}
 --- !u!1 &4044377956510919565 stripped
 GameObject:
@@ -118,13 +124,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  campManager: {fileID: 0}
   detectionRange: 10
   attackRange: 2
   walkSpeed: 2
   runSpeed: 4
-  demonHealth: 40
-  CurrentHP: 40
-  attackCooldown: 0.5
 --- !u!136 &4823149795970481844
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -148,3 +152,31 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6748347441747463656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4044377956510919565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c54b5aa95dd137897a25611a80206e81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  demonHealth: 40
+  CurrentHP: 0
+--- !u!114 &-4415450321132694259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4044377956510919565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b12e34a6fba09654b44c136aa903227, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 1.5
+  isAttacking: 0

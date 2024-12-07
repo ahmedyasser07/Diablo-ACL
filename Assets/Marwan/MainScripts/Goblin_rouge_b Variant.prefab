@@ -107,6 +107,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 185802, guid: c1d92bdd55f8c154c957dcd4f7cfe669, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3494403285782860265}
+    - targetCorrespondingSourceObject: {fileID: 185802, guid: c1d92bdd55f8c154c957dcd4f7cfe669, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8950020307586595467}
+    - targetCorrespondingSourceObject: {fileID: 185802, guid: c1d92bdd55f8c154c957dcd4f7cfe669, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3372053983481140921}
   m_SourcePrefab: {fileID: 100100000, guid: c1d92bdd55f8c154c957dcd4f7cfe669, type: 3}
 --- !u!1 &7547326963167433075 stripped
 GameObject:
@@ -130,9 +136,6 @@ MonoBehaviour:
   attackRange: 2
   walkSpeed: 2
   runSpeed: 4
-  minion_health: 40
-  CurrentHP: 0
-  attackCooldown: 1.5
 --- !u!195 &5438258197810536299
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -178,3 +181,31 @@ CapsuleCollider:
   m_Height: 0
   m_Direction: 1
   m_Center: {x: 0, y: 2, z: 0}
+--- !u!114 &-8950020307586595467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7547326963167433075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e76a6b2720f71dafe8cb3410ef77e908, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 1.5
+  isAttacking: 0
+--- !u!114 &-3372053983481140921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7547326963167433075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea34398be2aede4598a1ae30b7cff17c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minionHealth: 40
+  CurrentHP: 0

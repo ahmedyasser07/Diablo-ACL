@@ -5,6 +5,8 @@ public class MinionAI : MonoBehaviour
 {
     [Header("References")]
     public Transform player;
+     [Tooltip("Reference to the CampManager")]
+    public CampManager campManager; // Assigned by CampManager
     private NavMeshAgent agent;
     private Animator animator;
     private MinionCombat combat;

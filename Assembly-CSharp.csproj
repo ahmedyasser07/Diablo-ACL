@@ -96,6 +96,7 @@
     <Compile Include="Assets/Scripts/IntroManager.cs" />
     <Compile Include="Assets/Marwan/Hero/keypress/PlayerInput.cs" />
     <Compile Include="Assets/Marwan/Hero/keypress/Movement.cs" />
+    <Compile Include="Assets/Marwan/MainScripts/CampSystem/Highlighter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
