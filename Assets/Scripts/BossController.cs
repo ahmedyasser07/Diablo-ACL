@@ -81,6 +81,7 @@ public class BossController : MonoBehaviour
 
     public void DieOn(){
         demongirlAnimator.SetBool("Die", true);
+        demongirlAnimator.Play("die00");
     }
     public void DieOff(){
         demongirlAnimator.SetBool("Die", false);
