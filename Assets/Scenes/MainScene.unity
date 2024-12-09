@@ -367,7 +367,7 @@ Transform:
   m_GameObject: {fileID: 430790074}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 69.65, y: 0, z: 27.74}
+  m_LocalPosition: {x: 127.06, y: 0, z: 27.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -928,7 +928,7 @@ Transform:
   m_GameObject: {fileID: 1026099136}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.95, y: 0, z: 10}
+  m_LocalPosition: {x: 81.6, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1479,7 +1479,7 @@ Transform:
   m_GameObject: {fileID: 1571853556}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 76.4, y: 0, z: 10}
+  m_LocalPosition: {x: 124.24, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1810,7 +1810,7 @@ Transform:
   m_GameObject: {fileID: 1896303679}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.91, y: 0, z: 26.9}
+  m_LocalPosition: {x: 81.79, y: 0, z: 26.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1857,8 +1857,8 @@ MonoBehaviour:
   - {fileID: 1896303680}
   minionPrefab: {fileID: 4958228773149653208, guid: 7731371a9e72e00c0a44c6a73e852468, type: 3}
   numberOfMinions: 5
-  minDistanceFromPlayer: 1
-  maxSpawnAttempts: 10
+  minDistanceFromPlayer: 3
+  maxSpawnAttempts: 3
   gizmoColor: {r: 0, g: 1, b: 0, a: 1}
   gizmoSphereSize: 0.5
 --- !u!4 &1900720224
@@ -1892,10 +1892,10 @@ MonoBehaviour:
   drawLines: 1
   sphereSize: 0.5
   waypointColors:
-  - {r: 0.57611114, g: 0.11861597, b: 0.46704844, a: 1}
-  - {r: 0.18968564, g: 0.69134706, b: 0.47888386, a: 1}
-  - {r: 0.07686428, g: 0.16555218, b: 0.9933069, a: 1}
-  - {r: 0.86462855, g: 1, b: 0.05240041, a: 1}
+  - {r: 0.34557155, g: 0.29224378, b: 0.27819598, a: 1}
+  - {r: 0.6383812, g: 0.4690189, b: 0.47765067, a: 1}
+  - {r: 0.34602606, g: 0.36388153, b: 0.3701146, a: 1}
+  - {r: 0.5996757, g: 0.60514677, b: 0.62631136, a: 1}
 --- !u!4 &2080258926 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6102168432905421810, guid: 15a79c54f0de80a41955a50618f7c71e, type: 3}
