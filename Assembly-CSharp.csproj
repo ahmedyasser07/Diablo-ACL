@@ -64,39 +64,44 @@
     <Analyzer Include="/home/marwan/Unity/Hub/Editor/2022.3.45f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/Marwan/DemonHealth.cs" />
     <Compile Include="Assets/Marwan/Jumping.cs" />
-    <Compile Include="Assets/Marwan/Highlighter.cs" />
-    <Compile Include="Assets/Marwan/CampManager.cs" />
+    <Compile Include="Assets/Marwan/Camp/CampManager.cs" />
     <Compile Include="Assets/Models/Demon/Common/Scripts/CharacterVFX.cs" />
+    <Compile Include="Assets/Marwan/HUDStuff/AbilityUI.cs" />
     <Compile Include="Assets/Marwan/Combat.cs" />
-    <Compile Include="Assets/Marwan/DemonAI.cs" />
+    <Compile Include="Assets/Marwan/Enemy/DemonHealth.cs" />
     <Compile Include="Assets/Models/Demon/Common/Scripts/Preview/AnimationList.cs" />
     <Compile Include="Assets/Models/Demon/Common/Scripts/Animation/AnimationStateMachine.cs" />
     <Compile Include="Assets/Models/Demon/Common/Scripts/Preview/CharacterLoader.cs" />
     <Compile Include="Assets/Models/Minion/Goblin_rouge/Script/Goblin_ro_ctrl.cs" />
     <Compile Include="Assets/Models/Demon/Common/Scripts/Preview/CharacterRotator.cs" />
-    <Compile Include="Assets/Marwan/PlayerHUD.cs" />
+    <Compile Include="Assets/Marwan/zeina/Scripts/CameraFollow.cs" />
+    <Compile Include="Assets/Marwan/zeina/Scripts/Fireball.cs" />
+    <Compile Include="Assets/Marwan/Enemy/DemonAI.cs" />
     <Compile Include="Assets/Polytope Studio/Lowpoly_Demos/Environment_Free/Helpers/MouseLook.cs" />
     <Compile Include="Assets/Scripts/RotateCharacter.cs" />
-    <Compile Include="Assets/Marwan/CameraController.cs" />
     <Compile Include="Assets/Marwan/PlayerStats.cs" />
-    <Compile Include="Assets/Marwan/AbilityManager.cs" />
-    <Compile Include="Assets/Marwan/DemonCombat.cs" />
-    <Compile Include="Assets/Marwan/AbilityUI.cs" />
+    <Compile Include="Assets/Marwan/zeina/Scripts/Sorcerer.cs" />
     <Compile Include="Assets/Marwan/PlayerInput.cs" />
     <Compile Include="Assets/Scripts/MainMenuManager.cs" />
     <Compile Include="Assets/Models/RFA/Common/Plugins/NaughtyCharacter/Scripts/PlayerCamera.cs" />
     <Compile Include="Assets/Models/Demon/Common/Scripts/Animation/CharacterAnimation.cs" />
     <Compile Include="Assets/Polytope Studio/Lowpoly_Demos/Environment_Free/Helpers/PlayerMovement.cs" />
+    <Compile Include="Assets/Marwan/HUDStuff/AbilityManager.cs" />
     <Compile Include="Assets/Scripts/AudioManager.cs" />
     <Compile Include="Assets/Marwan/Movement.cs" />
+    <Compile Include="Assets/Marwan/Enemy/DemonCombat.cs" />
+    <Compile Include="Assets/Marwan/Enemy/MinionAI.cs" />
     <Compile Include="Assets/Models/Demon/Common/Scripts/Utils/AnimationID.cs" />
+    <Compile Include="Assets/Marwan/zeina/Scripts/InfernoBehavior.cs" />
     <Compile Include="Assets/Models/RFA/Common/Plugins/NaughtyCharacter/Scripts/SpringArm.cs" />
+    <Compile Include="Assets/Marwan/zeina/Scripts/Enemy.cs" />
     <Compile Include="Assets/Scripts/IntroManager.cs" />
-    <Compile Include="Assets/Marwan/MinionAI.cs" />
-    <Compile Include="Assets/Marwan/MinionHealth.cs" />
-    <Compile Include="Assets/Marwan/MinionCombat.cs" />
+    <Compile Include="Assets/Marwan/HUDStuff/PlayerHUD.cs" />
+    <Compile Include="Assets/Marwan/Camp/Highlighter.cs" />
+    <Compile Include="Assets/Marwan/Enemy/MinionHealth.cs" />
+    <Compile Include="Assets/Marwan/Enemy/MinionCombat.cs" />
+    <Compile Include="Assets/Marwan/HUDStuff/CameraController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

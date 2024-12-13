@@ -17,11 +17,10 @@ namespace Retro.ThirdPersonCharacter
         private Vector3 moveDirection = Vector3.zero;
 
         public float gravity = 10;
-        public float jumpSpeed = 4; 
-
+        public float jumpSpeed = 4;
         public float MaxSpeed = 10;
         private float DecelerationOnStop = 0.00f;
-
+        public float rotationSpeed = 10f;
 
         private void Start()
         {
@@ -35,7 +34,7 @@ namespace Retro.ThirdPersonCharacter
         {
             if (_animator == null) return;
 
-            if(_combat.AttackInProgress)
+            if (_combat.AttackInProgress)
             {
                 StopMovementOnAttack();
             }
@@ -43,8 +42,8 @@ namespace Retro.ThirdPersonCharacter
             {
                 Move();
             }
-
         }
+
         private void Move()
         {
             var x = _playerInput.MovementInput.x;
@@ -54,16 +53,35 @@ namespace Retro.ThirdPersonCharacter
 
             if (grounded)
             {
-                moveDirection = new Vector3(x, 0, y);
-                moveDirection = transform.TransformDirection(moveDirection);
-                moveDirection *= MaxSpeed;
+                Vector3 targetDirection = new Vector3(x, 0, y);
+
+                if (targetDirection.magnitude > 0.1f)
+                {
+                    // Rotate towards movement direction
+                    Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+
+                    // Move in the target direction
+                    moveDirection = targetDirection.normalized * MaxSpeed;
+                }
+                else
+                {
+                    moveDirection = Vector3.zero; // Stop movement when no input
+                }
+
                 if (_playerInput.JumpInput)
+                {
                     moveDirection.y = jumpSpeed;
+                }
             }
 
+            // Apply gravity
             moveDirection.y -= gravity * Time.deltaTime;
+
+            // Move the character
             _characterController.Move(moveDirection * Time.deltaTime);
 
+            // Update animator parameters
             _animator.SetFloat("InputX", x);
             _animator.SetFloat("InputY", y);
             _animator.SetBool("IsInAir", !grounded);
