@@ -356,7 +356,7 @@ GameObject:
   m_Component:
   - component: {fileID: 430790075}
   m_Layer: 0
-  m_Name: patrol 1
+  m_Name: patrol 11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -371,7 +371,7 @@ Transform:
   m_GameObject: {fileID: 430790074}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 127.06, y: 0, z: 27.74}
+  m_LocalPosition: {x: 127.06, y: 0, z: 27.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -781,6 +781,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 53.1, y: -117.9, z: -47}
+--- !u!1 &912830264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 912830265}
+  m_Layer: 0
+  m_Name: patrol 24
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &912830265
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912830264}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 87.6, y: -0.5887561, z: 86.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &982299226
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,7 +860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06b8d12ea24c9f69bbfdb73badae69d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 2041709839}
+  playerStats: {fileID: 2080258932}
   healthBarFill: {fileID: 1569302676}
   healthBarText: {fileID: 1796631818}
   xpBarFill: {fileID: 1560239298}
@@ -846,7 +877,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1026099137}
   m_Layer: 0
-  m_Name: patrol 3
+  m_Name: patrol 13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -861,7 +892,7 @@ Transform:
   m_GameObject: {fileID: 1026099136}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 81.6, y: 0, z: 10}
+  m_LocalPosition: {x: 94.9, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -992,6 +1023,87 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 8407548119fd37541b2f022f41dda643, type: 2}
   m_BuildHeightMesh: 0
+--- !u!1 &1183729665
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1183729667}
+  - component: {fileID: 1183729666}
+  - component: {fileID: 1183729668}
+  m_Layer: 0
+  m_Name: CampManager2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1183729666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183729665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f4d26e17c4e16589d64f1993f32768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 1715801870}
+  - {fileID: 1379896076}
+  - {fileID: 2088004793}
+  - {fileID: 912830265}
+  demonPrefab: {fileID: 2224747801571686998, guid: ce9bc27f09386e0ce9f140f90c685af4, type: 3}
+  spawnPoints:
+  - {fileID: 1715801870}
+  - {fileID: 1379896076}
+  - {fileID: 2088004793}
+  minionPrefab: {fileID: 2556194214423393268, guid: fdbe044ed8e6af9b29fce8308704e200, type: 3}
+  numberOfMinions: 5
+  minDistanceFromPlayer: 5
+  maxSpawnAttempts: 10
+  gizmoColor: {r: 0, g: 1, b: 0, a: 1}
+  gizmoSphereSize: 0.5
+--- !u!4 &1183729667
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183729665}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 123.174545, y: 0.107686244, z: 62.040577}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1183729668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183729665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72dc7a3d883d1fe60b496c5af3386c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  campManager: {fileID: 1183729666}
+  drawLines: 1
+  sphereSize: 0.5
+  waypointColors:
+  - {r: 0.29085267, g: 0.30409327, b: 0.28708768, a: 1}
+  - {r: 0.2749753, g: 0.248643, b: 0.31196085, a: 1}
+  - {r: 0.18762568, g: 0.48986036, b: 0.74483234, a: 1}
+  - {r: 0.3671164, g: 0.64824384, b: 0.58965, a: 1}
 --- !u!1 &1317312095
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,6 +1238,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1379896075
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1379896076}
+  m_Layer: 0
+  m_Name: patrol 22
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1379896076
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379896075}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 120.7, y: -0.5887561, z: 97.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1557975064
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,7 +1356,7 @@ Transform:
   m_GameObject: {fileID: 1557975064}
   serializedVersion: 2
   m_LocalRotation: {x: -0.0003948226, y: 0.99646163, z: -0.0839201, w: -0.0046398262}
-  m_LocalPosition: {x: 12.486943, y: 2.726754, z: 17.302078}
+  m_LocalPosition: {x: 12.856843, y: -17.022186, z: 17.289358}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1231,7 +1374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eaa29460d7506197b13c083d7995da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 2041709837}
+  _target: {fileID: 2080258926}
   _distance: 5
   _height: 5
   _angle: 45
@@ -1397,7 +1540,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1571853557}
   m_Layer: 0
-  m_Name: patrol 2
+  m_Name: patrol 12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1413,6 +1556,37 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 124.24, y: 0, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1715801869
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1715801870}
+  m_Layer: 0
+  m_Name: patrol 21
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1715801870
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715801869}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 105, y: -0.5887561, z: 110.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1567,7 +1741,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1896303680}
   m_Layer: 0
-  m_Name: patrol 4
+  m_Name: patrol 14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1582,7 +1756,7 @@ Transform:
   m_GameObject: {fileID: 1896303679}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 81.79, y: 0, z: 26.9}
+  m_LocalPosition: {x: 95.9, y: 0, z: 26.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1600,7 +1774,7 @@ GameObject:
   - component: {fileID: 1900720223}
   - component: {fileID: 1900720225}
   m_Layer: 0
-  m_Name: CampManager
+  m_Name: CampManager1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1628,8 +1802,8 @@ MonoBehaviour:
   - {fileID: 430790075}
   - {fileID: 1896303680}
   minionPrefab: {fileID: 4958228773149653208, guid: 7731371a9e72e00c0a44c6a73e852468, type: 3}
-  numberOfMinions: 5
-  minDistanceFromPlayer: 3
+  numberOfMinions: 10
+  minDistanceFromPlayer: 5
   maxSpawnAttempts: 3
   gizmoColor: {r: 0, g: 1, b: 0, a: 1}
   gizmoSphereSize: 0.5
@@ -1854,11 +2028,6 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 0
---- !u!4 &2041709837 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0ee274049ba034c4b92484e39375685b, type: 3}
-  m_PrefabInstance: {fileID: 2041709832}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2041709839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1957,6 +2126,37 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!1 &2088004792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2088004793}
+  m_Layer: 0
+  m_Name: patrol 23
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2088004793
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088004792}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 91.4, y: -0.5887561, z: 92.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1973,3 +2173,8 @@ SceneRoots:
   - {fileID: 1896303680}
   - {fileID: 1900720224}
   - {fileID: 2041709832}
+  - {fileID: 1715801870}
+  - {fileID: 1379896076}
+  - {fileID: 2088004793}
+  - {fileID: 912830265}
+  - {fileID: 1183729667}
