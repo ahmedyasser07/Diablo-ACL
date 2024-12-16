@@ -12,10 +12,11 @@ public class BossController : MonoBehaviour
     public GameObject Aura;
     public Animator spikesAnimator;
     public Animator shieldAnimator;
+    private GameObject minion;
 
     public Transform player;
     public bool IsDead { get; private set; } = false;
-    private float attackRange;
+    public float attackRange;
 
     public int bossHealth;
     public int CurrentHP;
@@ -29,6 +30,7 @@ public class BossController : MonoBehaviour
     private int time;
     public bool minionsDead;
     public bool phase2;
+    public bool newPhase;
 
     void Start()
     {
@@ -46,6 +48,7 @@ public class BossController : MonoBehaviour
         bossHealth = 50;
         shieldHP=50;
         CurrentHP = 50;
+        newPhase=false;
 
         StartCoroutine(CheckPhaseEvery3Seconds());
         
@@ -68,9 +71,20 @@ public class BossController : MonoBehaviour
     {
         while (true) 
         {
+            if(newPhase){
+                yield return new WaitForSeconds(3f);
+                newPhase=false;
+                CurrentHP=bossHealth;
+                Phase2Starts();
+            }
+            if(minion==null){
+                yield return new WaitForSeconds(3f);
+                minionsDead = true;
+                defend=false;
+            }
             TryToAttack();
             time+=3;
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(3f);
 
         }
     }
@@ -102,7 +116,7 @@ public class BossController : MonoBehaviour
                 Jump();
             }
             if((!phase2)&&(time%2==1)){
-                SummonMinions();
+               SummonMinions();
             }
         }
         
@@ -111,16 +125,20 @@ public class BossController : MonoBehaviour
 
     //Animations 
     public void Die(){
-        demongirlAnimator.SetBool("Die", true);
-        demongirlAnimator.Play("die00");
         if(phase2){
             IsDead=true;
+            demongirlAnimator.Play("die00 F");
             StartCoroutine(RemoveAfterAnimation());
         }
+        if(!phase2){
+        demongirlAnimator.Play("die00");
+        newPhase=true;
+        //yield return new WaitForSeconds(2f);
+        }
+
 
     }
     public void Phase2Starts(){
-        demongirlAnimator.SetBool("Die", false);
         phase2=true;
         bool switchLayer = true;
         demongirlAnimator.SetLayerWeight(1, switchLayer ? 1 : 0); // Layer 2 (Phase2)
@@ -185,24 +203,25 @@ public class BossController : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             Vector3 spawnPosition = mainPosition + spawnOffsets[i];
-            GameObject minion = Instantiate(Minion, spawnPosition, Quaternion.identity);
+            minion = Instantiate(Minion, spawnPosition, Quaternion.identity);
             minion.name = $"Minion_{i + 1}";
+            minion.SetActive(true);
         }
     }
 
     void ApplyDamageToPlayer(int damageAmount)
     {
-        /*PlayerStats playerStats = player.GetComponent<PlayerStats>();
+        PlayerStats playerStats = player.GetComponent<PlayerStats>();
         if (playerStats != null && !IsDead)
         {
             playerStats.TakeDamage(damageAmount);
-        }*/
+        }
     }
 
     public void TakeDamage(int amount)
     {
         if (IsDead) return;
-
+        if(CurrentHP==0) return;
         if(aura){
             PutAuraDown(); //remove aura
             return;
@@ -224,16 +243,17 @@ public class BossController : MonoBehaviour
                 if (CurrentHP <= 0 && !IsDead)
                 {
                     Die();
+
                     if(!phase2){
                     CurrentHP=bossHealth;
                     Phase2Starts();
                     }
+                    
                 }
 
             }
             return;
         }
-
         demongirlAnimator.Play("hit01");
 
         CurrentHP -= amount;
@@ -243,10 +263,6 @@ public class BossController : MonoBehaviour
         if (CurrentHP <= 0 && !IsDead)
         {
             Die();
-            if(!phase2){
-                CurrentHP=bossHealth;
-                Phase2Starts();
-            }
         }
 
     }
