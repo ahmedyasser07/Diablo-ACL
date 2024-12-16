@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Models/RFA/HDRP/Scenes/RFA.unity.meta
 guid: 2ef37f04a486bfc4b82cc9334f650276
+========
+guid: bd960d1781917284bb89077cf66b65fe
+>>>>>>>> Hasbo:Assets/Polytope Studio/Lowpoly_Environments/SRP/PT_Nature_Free_URP_14.0.9.unitypackage.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

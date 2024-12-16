@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/SampleScene.unity.meta
 guid: f3fa24c112650084a9502d5e20132db1
+========
+guid: 00e5c65918c7b442cb0b5c2a10c0a426
+>>>>>>>> Hasbo:Assets/Scenes/BossScene.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
