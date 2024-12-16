@@ -5,6 +5,7 @@ namespace Retro.ThirdPersonCharacter
 {
     [RequireComponent(typeof(PlayerInput))]
     [RequireComponent(typeof(Animator))]
+    [RequireComponent(typeof(BossController))]
     public class Combat : MonoBehaviour
     {
         private const string attackTriggerName = "Attack";
@@ -107,11 +108,18 @@ private void PerformAttackHit()
         if (minionStats != null)
         {
             minionStats.TakeDamage(damage);
+            continue;
+        }
+
+        var bossStats = enemy.GetComponent<BossController>();
+        if(bossStats != null){
+            Debug.Log("Boss");
+            bossStats.TakeDamage(damage);
         }
     }
 }
 
-// Optional: visualize the attack range in editor
+  // Optional: visualize the attack range in editor
 private void OnDrawGizmosSelected()
 {
     if (attackPoint == null) return;
