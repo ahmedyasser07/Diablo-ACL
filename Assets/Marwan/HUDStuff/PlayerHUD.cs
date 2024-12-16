@@ -4,26 +4,28 @@ using UnityEngine.UI;
 
 namespace Retro.ThirdPersonCharacter
 {
+    [RequireComponent(typeof(PlayerInput))]
+
     public class PlayerHUD : MonoBehaviour
     {
         [SerializeField] private PlayerStats playerStats;
 
         // Health Bar UI elements
-        [SerializeField] private Image healthBarFill;
-        [SerializeField] private TextMeshProUGUI healthBarText;
+        [SerializeField] public Image healthBarFill;
+        [SerializeField] public TextMeshProUGUI healthBarText;
 
         // XP Bar UI elements
-        [SerializeField] private Image xpBarFill;
-        [SerializeField] private TextMeshProUGUI xpBarText;
+        [SerializeField] public Image xpBarFill;
+        [SerializeField] public TextMeshProUGUI xpBarText;
 
         // Level Display
-        [SerializeField] private TextMeshProUGUI levelText;
+        [SerializeField] public TextMeshProUGUI levelText;
 
         // Ability Points Display
-        [SerializeField] private TextMeshProUGUI abilityPointsText;
+        [SerializeField] public TextMeshProUGUI abilityPointsText;
 
-        [SerializeField] private GameObject barbarian;
-        [SerializeField] private GameObject sorcerer;
+        [SerializeField] public GameObject barbarian;
+        [SerializeField] public GameObject sorcerer;
 
         private void Start()
         {
@@ -56,7 +58,7 @@ namespace Retro.ThirdPersonCharacter
             UpdateAbilityPointsDisplay();
         }
 
-        private void UpdateHealthBar()
+        public void UpdateHealthBar()
         {
             if (playerStats != null)
             {

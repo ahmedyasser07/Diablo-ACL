@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Retro.ThirdPersonCharacter;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(PlayerInput))]
 
 public class PlayerStats : MonoBehaviour
 {
@@ -16,12 +17,14 @@ public class PlayerStats : MonoBehaviour
     // Starting HP for level 1 is 100.
     public int MaxHP = 100;
     public int CurrentHP;
+    public int healingPotions;
 
     // The Wanderer gains 1 ability point per level-up.
     public int AbilityPoints = 0;
 
     // When the Wanderer dies, this flag will be set.
     private bool isDead = false;
+
 
     private void Start()
     {
@@ -33,9 +36,9 @@ public class PlayerStats : MonoBehaviour
         {
             // Default initialization if no data exists
             XPToNextLevel = 100 * Level; 
-            CurrentHP = MaxHP;
+            CurrentHP = MaxHP-10;
         }
-
+        healingPotions=0;
         Debug.Log("PlayerStats initialized. HP: " + CurrentHP);
     }
 
@@ -105,11 +108,11 @@ public class PlayerStats : MonoBehaviour
 
 
     // The Wanderer can heal up to their MaxHP.
-    public void Heal(int amount)
+    public void Heal()
     {
-        CurrentHP += amount;
-        CurrentHP = Mathf.Clamp(CurrentHP, 0, MaxHP);
-        Debug.Log($"Player healed for {amount}. CurrentHP: {CurrentHP}");
+        CurrentHP = MaxHP;
+        Debug.Log(CurrentHP);
+        Debug.Log($"Player healed for maxHP . CurrentHP: {CurrentHP}");
     }
 
     // When the Wanderer dies, disable player input, combat, and trigger the "Die" animation.
@@ -145,6 +148,17 @@ public class PlayerStats : MonoBehaviour
 {
     yield return new WaitForSeconds(delay);
     GameOver();
+}
+
+private void OnTriggerEnter(Collider other){
+         if (other.CompareTag("healing"))
+        {
+            if(healingPotions==3)return;
+            if(healingPotions<3){
+                healingPotions++;
+                Destroy(other.gameObject);
+            }
+        }
 }
 
 }
