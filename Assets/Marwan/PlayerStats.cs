@@ -2,6 +2,8 @@ using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
 using Retro.ThirdPersonCharacter;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerStats : MonoBehaviour
 {
@@ -23,11 +25,20 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
-        // Ensure the XPToNextLevel is set correctly for the current level.
-        XPToNextLevel = 100 * Level; 
-        CurrentHP = MaxHP;
+        if (PlayerData.Instance != null)
+        {
+            PlayerData.Instance.LoadPlayerStats(this);
+        }
+        else
+        {
+            // Default initialization if no data exists
+            XPToNextLevel = 100 * Level; 
+            CurrentHP = MaxHP;
+        }
+
         Debug.Log("PlayerStats initialized. HP: " + CurrentHP);
     }
+
 
     // The Wanderer gains XP upon killing enemies or other events.
     public void GainXP(int amount)
@@ -86,8 +97,12 @@ public class PlayerStats : MonoBehaviour
         if (CurrentHP <= 0 && !isDead)
         {
             Die();
+
+            // Call GameOver with a delay
+            StartCoroutine(DelayedGameOver(3f)); // 2 seconds delay
         }
     }
+
 
     // The Wanderer can heal up to their MaxHP.
     public void Heal(int amount)
@@ -103,10 +118,33 @@ public class PlayerStats : MonoBehaviour
         if (isDead) return;
         isDead = true;
 
+        if (PlayerData.Instance != null)
+        {
+            PlayerData.Instance.SavePlayerStats(this);
+        }
+        else
+        {
+            Debug.LogWarning("PlayerData.Instance is null. Stats could not be saved.");
+        }
+
         GetComponent<PlayerInput>().enabled = false;
         GetComponent<Combat>().enabled = false;
 
         GetComponent<Animator>().SetTrigger("Die");
         Debug.Log("Player has died.");
     }
+
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene("GameOverScene"); // Placeholder for options functionality
+    }
+
+
+    private IEnumerator DelayedGameOver(float delay)
+{
+    yield return new WaitForSeconds(delay);
+    GameOver();
+}
+
 }
