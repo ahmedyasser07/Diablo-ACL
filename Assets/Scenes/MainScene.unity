@@ -152,7 +152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6102168432905421709, guid: 15a79c54f0de80a41955a50618f7c71e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6102168432905421709, guid: 15a79c54f0de80a41955a50618f7c71e, type: 3}
       propertyPath: m_TagString
@@ -246,7 +246,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 916.072, y: -25}
+  m_AnchoredPosition: {x: 501, y: -49.7}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &359834762
@@ -296,8 +296,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -332,7 +332,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 11.85905}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -411,7 +411,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 893.47205, y: -101.5}
+  m_AnchoredPosition: {x: 471, y: -111}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &449606682
@@ -463,8 +463,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -499,7 +499,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -47.726357, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -867,6 +867,8 @@ MonoBehaviour:
   xpBarText: {fileID: 1317312096}
   levelText: {fileID: 359834762}
   abilityPointsText: {fileID: 449606682}
+  barbarian: {fileID: 1762785384}
+  sorcerer: {fileID: 2041709833}
 --- !u!1 &1026099136
 GameObject:
   m_ObjectHideFlags: 0
@@ -916,7 +918,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1075073696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1444,7 +1446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1557975065
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1570,8 +1572,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 26, y: -171.29999}
-  m_SizeDelta: {x: -717.6, y: 36.099976}
+  m_AnchoredPosition: {x: 317, y: -178.2}
+  m_SizeDelta: {x: 300, y: 36.099976}
   m_Pivot: {x: 0.97, y: -1.67}
 --- !u!114 &1560239298
 MonoBehaviour:
@@ -1646,8 +1648,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 26, y: -96.38693}
-  m_SizeDelta: {x: -717.6, y: 36.099976}
+  m_AnchoredPosition: {x: 317, y: -118.8}
+  m_SizeDelta: {x: 300, y: 36.099976}
   m_Pivot: {x: 0.97, y: -1.67}
 --- !u!114 &1569302676
 MonoBehaviour:
@@ -2053,7 +2055,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0ee274049ba034c4b92484e39375685b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0ee274049ba034c4b92484e39375685b, type: 3}
       propertyPath: m_TagString
