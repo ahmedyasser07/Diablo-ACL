@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/TestScene.unity.meta
 guid: 2312ed4eb6be3b9069e29ffb0897c096
+========
+guid: fae09cfceda875146a4f9a54fa30589e
+>>>>>>>> Hasbo:Assets/Polytope Studio/Lowpoly_Environments/SRP/PT_Nature_Free_URP_12.1.13.unitypackage.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
